@@ -1,4 +1,4 @@
-package com.example.motiontestlayout
+package com.example.motiontestlayout.feature
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -36,6 +36,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.motiontestlayout.HomeScreen
+import com.example.motiontestlayout.R
 
 @Composable
 fun LoginScreen(navController: NavController) {

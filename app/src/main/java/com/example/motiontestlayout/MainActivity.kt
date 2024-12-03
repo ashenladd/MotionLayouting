@@ -7,6 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.example.motiontestlayout.feature.BookDetailScreen
+import com.example.motiontestlayout.feature.HomeScreen
+import com.example.motiontestlayout.feature.LoginScreen
 import com.example.motiontestlayout.ui.theme.MotionTestLayoutTheme
 import kotlinx.serialization.Serializable
 
@@ -28,6 +32,11 @@ class MainActivity : ComponentActivity() {
                     composable<HomeScreen> {
                         HomeScreen(navController)
                     }
+
+                    composable<BookDetail> {
+                        val args = it.toRoute<BookDetail>()
+                        BookDetailScreen(param = args)
+                    }
                 }
             }
         }
@@ -39,4 +48,7 @@ object LoginScreen
 
 @Serializable
 object HomeScreen
+
+@Serializable
+data class BookDetail(val bookId: String, val bookDesc: String)
 
